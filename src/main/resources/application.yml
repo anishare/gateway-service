@@ -1,0 +1,13 @@
+server:
+  port: 9011
+
+spring:
+  application:
+    name: GATEWAY-SERVICE
+  cloud:
+    gateway:
+      routes:
+        - id: ANIME-SERVICE
+          uri: lb://ANIME-SERVICE
+          predicates:
+            - Path=/anime/**
